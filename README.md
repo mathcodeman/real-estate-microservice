@@ -25,7 +25,7 @@ Uses HTTP requests to the server: https://wesleytheobald.com with the given endp
 3. Adding new listing
 - Method: POST
 - Endpoint: /api/real-estate
-- Reqeust Content: JSON with listing data (Schema below)
+- Reqeust Content: body - JSON with listing data (Schema below)
 - Response Content: Status, 200-success, 442-invalid data
 - Example URL: https://wesleytheobald.com/api/real-estate
 
@@ -41,7 +41,7 @@ Uses HTTP requests to the server: https://wesleytheobald.com with the given endp
 5. Replace specific listing:
 - Method: PATCH
 - Endpoint: /api/real-estate/:id
-- Request Content: Listing ID (as path in URL)
+- Request Content: Listing ID (as path in URL), body - JSON with listing data (Schema below) 
 - Response Content: 200-success, 442-invalid ID
 - Example URL: https://wesleytheobald.com/api/real-estate/3ko5090kda53 (made up listing ID)
 
