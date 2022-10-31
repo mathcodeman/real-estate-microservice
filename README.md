@@ -4,6 +4,8 @@ Microservice to manage data from a real estate listings application.
 
 Uses HTTP requests to the server: https://wesleytheobald.com with the given endpoints below.
 
+![uml](https://www.dropbox.com/s/u32h93og9wa64mr/UML.png?raw=1)
+
 ## Requesting Data
 
 1. Request all listing entries:
