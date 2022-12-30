@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import express from "express";
 
-mongoose.connect('mongodb://localhost:27017/real-estate');
+
+mongoose.connect('mongodb+srv://admin:admin@inventorydb.bvw96.mongodb.net/?retryWrites=true&w=majority');
 const ListingSchema = new mongoose.Schema({
   address: String,
   city: String,
@@ -23,6 +24,7 @@ const ListingSchema = new mongoose.Schema({
   email: String,
   phone: String,
   weChart: String,
+  imageUrls: String
 });
 
 const Listing = mongoose.model("listing", ListingSchema);
@@ -32,18 +34,18 @@ const port = 3002;
 app.use(express.json());
 
 app.get("/api/real-estate", async (req, res) => {
-    const search = await Listing.find({});
-    res.status(200);
-    res.json(search);
-    res.end();
+  const search = await Listing.find({});
+  res.status(200);
+  res.json(search);
+  res.end();
 });
 
 app.get("/api/real-estate/:id", async (req, res) => {
   const id = req.params.id;
-    const search = await Listing.findOne({ _id: id });
-    res.status(200);
-    res.json(search);
-    res.end();
+  const search = await Listing.findOne({ _id: id });
+  res.status(200);
+  res.json(search);
+  res.end();
 });
 
 app.post("/api/real-estate", (req, res) => {
