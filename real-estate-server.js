@@ -30,7 +30,7 @@ const ListingSchema = new mongoose.Schema({
 const Listing = mongoose.model("listing", ListingSchema);
 
 const app = express();
-const port = 3002;
+const port = 443;
 app.use(express.json());
 
 app.get("/api/real-estate", async (req, res) => {
