@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import express from "express";
-import cors from "cors";
+import cors from "cors"
 
 
 mongoose.connect('mongodb+srv://admin:admin@inventorydb.bvw96.mongodb.net/?retryWrites=true&w=majority');
@@ -34,7 +34,7 @@ const app = express();
 const port = 3002;
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: '*',
 }))
 
 app.get("/api/real-estate", async (req, res) => {
