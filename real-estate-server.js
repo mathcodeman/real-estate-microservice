@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import express from "express";
+import cors from "cors";
 
 
 mongoose.connect('mongodb+srv://admin:admin@inventorydb.bvw96.mongodb.net/?retryWrites=true&w=majority');
@@ -24,7 +25,7 @@ const ListingSchema = new mongoose.Schema({
   email: String,
   phone: String,
   weChart: String,
-  imageUrls: String
+  //imageUrls: String
 });
 
 const Listing = mongoose.model("listing", ListingSchema);
@@ -32,6 +33,9 @@ const Listing = mongoose.model("listing", ListingSchema);
 const app = express();
 const port = 3002;
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000',
+}))
 
 app.get("/api/real-estate", async (req, res) => {
   const search = await Listing.find({});
