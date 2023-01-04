@@ -25,7 +25,7 @@ const ListingSchema = new mongoose.Schema({
   email: String,
   phone: String,
   weChart: String,
-  //imageUrls: String
+  imageUrls: String
 });
 
 const Listing = mongoose.model("listing", ListingSchema);
