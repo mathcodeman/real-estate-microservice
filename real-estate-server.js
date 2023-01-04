@@ -5,6 +5,7 @@ import cors from "cors"
 
 mongoose.connect('mongodb+srv://admin:admin@inventorydb.bvw96.mongodb.net/?retryWrites=true&w=majority');
 const ListingSchema = new mongoose.Schema({
+  listingTitle: String,
   address: String,
   city: String,
   postalCode: String,
