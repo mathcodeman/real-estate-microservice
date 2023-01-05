@@ -26,7 +26,9 @@ const ListingSchema = new mongoose.Schema({
   email: String,
   phone: String,
   weChart: String,
-  imageUrls: String
+  imageUrls: String,
+  lat: Number,
+  lng: Number
 });
 
 const Listing = mongoose.model("listing", ListingSchema);
